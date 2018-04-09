@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <style type="text/css">
+    #demo{color: #fff;}
+  </style>
+</head>
+<body>
+  <p>1.var counter = 0;
+ counter++; ++counter; alert( counter );
+What will alert this and why?</p>
+	<button onclick="answer1()">Answer 1</button>
+  <p>2. var n = 2; n *= 3 + 5; alert( n );
+What will alert this and why?</p>
+	<button onclick="answer2()">Answer 2</button>
+  <p>3. What are the final values of all variables a, b, c and d after the code below?
+var a = 1, b = 1; 
+var c = ++a; 
+var d = b++;</p>
+	<button onclick="answer3()">Answer 3</button>
+  <p>4. What are the values of a and x after the code below?
+var a = 2; var x = 1 + (a *= 2);</p>
+	<button onclick="answer4()">Answer 4</button>
+  <p>5. Find greatest among 4 numbers</p>
+	<button onclick="answer5()">Answer 5</button>
+  <p>6. Rewrite this if using the ternary operator '?':
+if (a + b < 4) { result = 'Below'; } else { result = 'Over'; }</p>
+	<button onclick="answer6()">Answer 6</button>
+  <p>7. Rewrite following to switch
+var a = +prompt('a?', ''); if (a == 0) { alert( 0 ); } if (a == 1) { alert( 1 ); } if (a == 2 || a == 3) { alert( '2,3' ); }</p>
+	<button onclick="answer7()">Answer 7</button>
+  <p>8. Write a condition to check if the given age is of a teenager or no. </p>
+	<button onclick="answer8()">Answer 8</button>
+  <p>9. Print/alert todays Day using switch & if-else. Also print a message saying “It is a weekend” if Saturday or Sunday! or be creative.</p>
+	<button onclick="answer9()">Answer 9</button>
+  <p>10. Set the color (yellow:morning, blue:evening, black:night) of body tag based on your system time. showcase your creativity.</p>
+	<button onclick="answer10()">Answer 10</button>
+  <p id="demo"></p>
+	<script>
+
+
+
+function answer1(){
+	document.write("it will alert as 2 because Variable counter was initially declared with value 0, counter++ will act as a counter = counter+1 i.e 0+1=1 and then second statement ++counter will add 1 in result and then display the counter value i.e 2");
+}
+
+function answer2(){
+  var n = 2; n *= 3 + 5; alert( n );
+  document.write("it will alert as 16 because Variable n was initially declared with value 2, and after that, n *= 3 + 5 will firstly add 3+5=8 and then 8*2 = 16. '+' sign has higher priority ");
+}
+function answer3(){
+	var a = 1, b = 1; 
+	var c = ++a; 
+	var d = b++;
+	document.write("Value of a: ",a);
+	document.write("<br>Value of b: ",b);
+	document.write("<br>Value of c: ",c);
+	document.write("<br>Value of d: ",d);
+}
+
+function answer4(){
+  var a = 2;
+  var x = 1 + (a *= 2);
+  document.write("Value of a: ",a);
+  document.write("<br>Value of x: ",x);
+}
+function answer5(){
+var a=23;
+var b=-26;
+var c=8;
+var d=-42;
+if (a>b && a>c && a>d)
+{
+    document.write("the greatest number is: ", a);
+}
+else if (b>a && b>c && b>d)
+{
+    document.write("the greatest number is: ", b);
+}
+else if (c>a && c>b && c>d)
+{
+    document.write("the greatest number is: ", c);
+}
+else
+{
+    document.write("the greatest number is: ", d);
+}
+}
+
+function answer6(){
+  let a = 2;
+  let b = 3;
+  var additionValue= a+b;
+ var result = (additionValue < 4) ? 'Below' : 'Over';
+ alert(additionValue);
+ document.write( additionValue, " is " ,result, " 4");
+}
+
+function answer7(){
+  var a = +prompt('a?', ''); 
+
+  // if (a == 0) { alert( 0 ); } if (a == 1) { alert( 1 ); } if (a == 2 || a == 3) { alert( '2,3' ); }
+
+  switch (true){
+    case (0):
+   
+    alert(0);
+    break;
+
+    case (1):
+    
+    alert(1);
+    break;
+
+    case (a == 2 || a ==3):
+   
+    alert("2,3");
+    break;
+  }
+}
+
+function answer8(){
+  var age = +prompt("please enter you're age?", ''); 
+   if (age < 0 && age >= 12) { alert("You're not a teenager"); }
+   if (age < 20 && age >= 13) { alert("You're a teenager"); } 
+   if (age >= 20) { alert("You're not a teenager"); }
+}
+
+function answer9(){
+var day;
+switch (new Date().getDay()) {
+    case 0:
+    	   text = "Weekend :)";
+        day = "Sunday";
+        break;
+    case 1:
+    	text = "5 days left for weekend!!";
+        day = "Monday";
+        break;
+    case 2:
+    	text = "4 days left for weekend!!";
+        day = "Tuesday";
+        break;
+    case 3:
+    	text = "3 days left for weekend!!";
+        day = "Wednesday";
+        break;
+    case 4:
+    	text = "2 days left for weekend!!";
+        day = "Thursday";
+        break;
+    case 5:
+    	text = "1 days left for weekend!!";
+        day = "Friday";
+        break;
+    case  6:
+    	text = "Hurray! It's Weekend ;)";
+        day = "Saturday";
+}
+alert(day);
+alert(text);
+}
+
+
+function answer10(){
+
+  var time = new Date().getHours();
+  var h = new Date().getHours();
+  var m = new Date().getMinutes();
+  var s = new Date().getSeconds();
+
+  if(time >= 5 && time < 15){
+  	document.body.style.background = "Yellow";
+  }
+  else if(time >= 15 && time < 19){
+  	document.body.style.background = "Blue";
+  }
+  else{
+  	document.body.style.background = "Black";
+  }
+   document.getElementById('demo').innerHTML ="Current Time: " + h + ":" + m + ":" + s;
+ }
+	</script>
+</body>
+</html>
